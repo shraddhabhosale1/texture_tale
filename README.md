@@ -60,10 +60,12 @@ group by pd.segment_id, pd.segment_name, pd.product_id, pd.product_name
 order by total_qty desc limit 5;
 
 /* What are the total quantity, revenue and discount for each category? */
+
 select pd.category_name, sum(s.qty) as total_qty, sum(s.price*s.qty) as total_revenue, sum(s.price*s.qty*s.discount) as total_discount
 from sales s inner join product_details pd on pd.product_id = s.prod_id group by pd.category_name;
 
 
 /* What is the top selling product for each category? */
+
 select pd.category_id, pd.category_name, pd.product_name, sum(s.qty) as total_qty from sales s inner join product_details pd
 on pd.product_id = s.prod_id group by pd.category_id, pd.category_name, pd.product_name order by total_qty desc;
