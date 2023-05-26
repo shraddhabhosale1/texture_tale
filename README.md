@@ -1,4 +1,5 @@
 # texture_tale
+Texture Tales clothing company prides themselves on providing an optimized range of clothing and lifestyle wear for the modern adventure!
 
 create database text_tale;
 
